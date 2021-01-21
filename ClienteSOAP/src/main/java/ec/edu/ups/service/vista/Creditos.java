@@ -210,11 +210,12 @@ Date date=new Date();
         int id=Integer.parseInt(txtid.getText());
         ci.setCedula(txtCedula.getText());
         ci.setNombre(txtnombre.getText());
-        c.setCliente(ci);
+        cu.setCliente(ci);
         cu.setNumcuenta(Integer.parseInt(txtcuenta.getText()));
         //cu.setFecha(date);
         cu.setMonto(Double.parseDouble(txtmonto.getText()));
         c.setCuenta(cu);
+        c.setCredito(id);
         port.insertarCredito(c);
     }//GEN-LAST:event_GuardarActionPerformed
 

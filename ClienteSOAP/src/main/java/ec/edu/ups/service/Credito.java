@@ -32,14 +32,14 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "credito", propOrder = {
-    "cliente",
+    
     "credito",
     "cuenta",
     "plazo"
 })
 public class Credito {
 
-    protected Cliente cliente;
+    
     protected int credito;
     protected Cuenta cuenta;
     @XmlSchemaType(name = "dateTime")
@@ -53,21 +53,7 @@ public class Credito {
      *     {@link Cliente }
      *     
      */
-    public Cliente getCliente() {
-        return cliente;
-    }
 
-    /**
-     * Define el valor de la propiedad cliente.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Cliente }
-     *     
-     */
-    public void setCliente(Cliente value) {
-        this.cliente = value;
-    }
 
     /**
      * Obtiene el valor de la propiedad credito.

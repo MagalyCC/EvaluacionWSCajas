@@ -1,6 +1,7 @@
 package ec.edu.ups.ON;
 
 import java.sql.SQLException;
+import java.util.Date;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -24,7 +25,7 @@ public class CreditoON {
 	@Inject
 	private creditoDAO daoc;
 	
-	
+	Date date=new Date();
 	
 	public void insertar(Cliente entity) {
 		try {
@@ -50,10 +51,11 @@ public class CreditoON {
 	
 		public void insertarCredito(Credito credito)throws Exception{
 			try {
-				Cliente cli=credito.getCliente();
+				Cliente cli=credito.getCuenta().getCliente();
 				Cuenta cu=credito.getCuenta();
 				daocli.insertJPA(cli);
 				daocuenta.insertJPA(cu);
+				cu.setFecha(date);
 				daoc.insertJPA(credito);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

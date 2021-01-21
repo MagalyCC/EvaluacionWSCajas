@@ -23,9 +23,6 @@ public class Credito implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn
-	private Cliente cliente;
-	@ManyToOne
-	@JoinColumn
 	private Cuenta cuenta;
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -44,12 +41,7 @@ public class Credito implements Serializable{
 	public void setCredito(int credito) {
 		this.credito = credito;
 	}
-	public Cliente getCliente() {
-		return cliente;
-	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
+	
 	public Cuenta getCuenta() {
 		return cuenta;
 	}
